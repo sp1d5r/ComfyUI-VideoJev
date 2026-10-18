@@ -1,0 +1,15 @@
+[project]
+name = "comfyui-videojev"
+description = "Ask a video typed questions (yes/no, choice, score, when?) and get a calibrated probability for every answer. Judge AI-generated video quality, find moments, filter generations."
+version = "0.1.0"
+license = { text = "CC-BY-NC-SA-4.0" }
+dependencies = ["transformers>=5.10.2", "peft", "accelerate", "safetensors", "huggingface_hub"]
+
+[project.urls]
+Repository = "https://github.com/sp1d5r/ComfyUI-VideoJev"
+Model = "https://huggingface.co/sp1d5r/video-jev"
+
+[tool.comfy]
+PublisherId = "sp1d5r"
+DisplayName = "Video Jev"
+Icon = ""

@@ -1,0 +1,140 @@
+{
+ "1": {
+  "class_type": "LoadVideo",
+  "inputs": {
+   "file": "your_video.mp4"
+  }
+ },
+ "2": {
+  "class_type": "VideoJevLoader",
+  "inputs": {
+   "weights": "sp1d5r/video-jev",
+   "precision": "bf16",
+   "max_gpu_gib": 20
+  }
+ },
+ "3": {
+  "class_type": "VideoJevAsk",
+  "inputs": {
+   "model": [
+    "2",
+    0
+   ],
+   "video": [
+    "1",
+    0
+   ],
+   "funniest_moment": true,
+   "magic_moment": false,
+   "laughing": true,
+   "which_sound": true,
+   "ai_generated": true,
+   "quality": false,
+   "described_moment": "a person falls over",
+   "prompt": "",
+   "custom_decode": "moment",
+   "custom_record": "{\"questions\": {\"dog\": {\"type\": \"noul\", \"instructions\": \"Is there a dog in this video?\"}}}"
+  }
+ },
+ "4": {
+  "class_type": "PreviewAny",
+  "inputs": {
+   "source": [
+    "3",
+    0
+   ]
+  }
+ },
+ "5": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "images": [
+    "3",
+    1
+   ],
+   "filename_prefix": "ask"
+  }
+ },
+ "6": {
+  "class_type": "VideoJevFindMoment",
+  "inputs": {
+   "model": [
+    "2",
+    0
+   ],
+   "video": [
+    "1",
+    0
+   ],
+   "mode": "event (2 fps, first 60 s)",
+   "question": "At what point in the video does the funniest thing happen?"
+  }
+ },
+ "7": {
+  "class_type": "PreviewAny",
+  "inputs": {
+   "source": [
+    "6",
+    4
+   ]
+  }
+ },
+ "8": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "images": [
+    "6",
+    3
+   ],
+   "filename_prefix": "clip"
+  }
+ },
+ "9": {
+  "class_type": "LoadVideo",
+  "inputs": {
+   "file": "your_ai_video.mp4"
+  }
+ },
+ "10": {
+  "class_type": "VideoJevJudge",
+  "inputs": {
+   "model": [
+    "2",
+    0
+   ],
+   "video": [
+    "9",
+    0
+   ],
+   "prompt": "crowd surfing at a Pink Floid rock concert before the show"
+  }
+ },
+ "11": {
+  "class_type": "PreviewAny",
+  "inputs": {
+   "source": [
+    "10",
+    7
+   ]
+  }
+ },
+ "12": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "images": [
+    "10",
+    8
+   ],
+   "filename_prefix": "judge"
+  }
+ },
+ "13": {
+  "class_type": "PreviewAny",
+  "inputs": {
+   "source": [
+    "10",
+    0
+   ]
+  }
+ }
+}

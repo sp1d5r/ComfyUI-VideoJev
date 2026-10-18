@@ -1,0 +1,7 @@
+ComfyUI-VideoJev and the Video Jev model weights are licensed under the
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International licence
+(CC BY-NC-SA 4.0): https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+vjev/clef_schema.py is from Cloudflare's Clef (https://huggingface.co/Cloudflare/clef-flash)
+and is licensed under the Apache License 2.0.
+The base model, Qwen3-Omni-30B-A3B, is licensed under the Apache License 2.0.
